@@ -1,0 +1,90 @@
+@mixin dot() {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgb(227, 88, 78);
+}
+
+.landing_item_background {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landing_item_logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: url('../../assets/ic_logo.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.landing_item_progress {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing_item_circle {
+    width: 30px;
+    height: 30px;
+    // background-color: rgb(227, 88, 78);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 20px;
+    &:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: rgb(227, 88, 78);
+        animation : loading 1s infinite;
+    }
+
+    &:nth-child(1) {
+        margin-left: 0;
+        &:before {
+        }
+    }
+    &:nth-child(2):before {
+        animation-delay: 0.15s;
+    }
+    &:nth-child(3):before {
+        animation-delay: 0.30s;
+    }
+    &:nth-child(4):before {
+        animation-delay: 0.45s;
+    }
+
+}
+
+@keyframes loading {
+    0% {
+        width: 12px;
+        height: 12px;
+    }
+
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+
+    100% {
+        width: 12px;
+        height: 12px;
+    }
+}
